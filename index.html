@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>iMove Control</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="iMove">
+</head>
+<body>
+
+    <div id="tela-selecao" class="app-container">
+        <header>
+            <div class="logo">iMove <span>Control</span></div>
+            <p class="tagline">MOVIMENTO INTELIGENTE</p>
+        </header>
+        <div class="instrucao">Selecione seu dispositivo:</div>
+        <div class="opcoes-lista">
+            <div class="card-dispositivo" onclick="configurarApp(2, 'iMove Essential', '💺')">
+                <div class="icon-main">💺</div>
+                <div class="info"><h3>Essential</h3><p>Poltrona - 2 Movimentos</p></div>
+            </div>
+            <div class="card-dispositivo" onclick="configurarApp(4, 'iMove Comfort', '🛏️')">
+                <div class="icon-main">🛏️</div>
+                <div class="info"><h3>Comfort</h3><p>Cama Simples - 4 Movimentos</p></div>
+            </div>
+            <div class="card-dispositivo" onclick="configurarApp(6, 'iMove Plus', '🛌')">
+                <div class="icon-main">🛌</div>
+                <div class="info"><h3>Plus</h3><p>Cama Premium - 6 Movimentos</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tela-controle" class="app-container" style="display: none;">
+        <div class="top-nav">
+            <button class="btn-voltar" onclick="voltarParaSelecao()">⬅ Voltar</button>
+            <div class="logo-mini">iMove</div>
+        </div>
+        <section class="monitor">
+            <h2 id="nome-dispositivo">Dispositivo</h2>
+            <div id="status-icon" class="main-display-icon">🛏️</div>
+            <div class="progresso-status">
+                <div class="barra-fundo"><div id="barra-progresso" class="barra-preenchida"></div></div>
+                <p><span id="txt-posicao">0</span>% da Elevação</p>
+            </div>
+        </section>
+        <section id="grade-botoes" class="controles-grid"></section>
+        <footer class="footer-controle">
+            <div class="alexa-badge">
+                <span class="alexa-icon">◯</span>
+                <span>Alexa integrada e ativa</span>
+            </div>
+            <div id="status-conexao">● Sistema Pronto</div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

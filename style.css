@@ -1,0 +1,42 @@
+:root {
+    --azul-fundo: #001a33;
+    --azul-card: #002d5a;
+    --amarelo: #ffcc00;
+    --branco: #ffffff;
+    --texto-secundario: #a0b0c0;
+    --cor-alexa: #00CAFF;
+}
+
+body { background-color: #000; margin: 0; font-family: sans-serif; color: var(--branco); display: flex; justify-content: center; }
+.app-container { background-color: var(--azul-fundo); width: 100vw; max-width: 450px; height: 100vh; display: flex; flex-direction: column; }
+
+header { text-align: center; padding: 40px 20px; }
+.logo { font-size: 32px; font-weight: bold; color: var(--amarelo); }
+.logo span { color: var(--branco); }
+.tagline { font-size: 10px; letter-spacing: 3px; opacity: 0.7; margin-top: 5px; }
+
+.instrucao { text-align: center; margin-bottom: 20px; color: var(--texto-secundario); font-size: 14px; }
+.opcoes-lista { padding: 0 20px; display: flex; flex-direction: column; gap: 15px; }
+
+.card-dispositivo { background: var(--azul-card); border: 1px solid rgba(255, 204, 0, 0.2); border-radius: 15px; padding: 20px; display: flex; align-items: center; gap: 20px; cursor: pointer; }
+.card-dispositivo:active { transform: scale(0.97); border-color: var(--amarelo); }
+.icon-main { font-size: 35px; }
+.info h3 { margin: 0; color: var(--amarelo); font-size: 18px; }
+
+.top-nav { display: flex; justify-content: space-between; align-items: center; padding: 15px; background: rgba(0,0,0,0.3); }
+.btn-voltar { background: none; border: 1px solid var(--amarelo); color: var(--amarelo); padding: 5px 12px; border-radius: 8px; cursor: pointer; }
+
+.monitor { text-align: center; padding: 20px 10px; }
+.main-display-icon { font-size: 60px; margin-bottom: 10px; }
+
+.barra-fundo { background: #1a3a5a; height: 8px; border-radius: 4px; width: 70%; margin: 10px auto; overflow: hidden; }
+.barra-preenchida { background: var(--amarelo); width: 0%; height: 100%; transition: 0.3s; box-shadow: 0 0 10px var(--amarelo); }
+
+.controles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 10px 25px; flex-grow: 1; }
+.btn-comando { background: var(--azul-card); border: 1px solid var(--amarelo); color: var(--branco); padding: 22px 10px; border-radius: 15px; font-weight: bold; font-size: 14px; }
+.btn-comando:active { background: var(--amarelo); color: var(--azul-fundo); }
+
+.footer-controle { padding: 15px; background: rgba(0,0,0,0.4); text-align: center; }
+.alexa-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 202, 255, 0.1); border: 1px solid var(--cor-alexa); padding: 6px 15px; border-radius: 20px; font-size: 11px; color: var(--cor-alexa); margin-bottom: 10px; }
+.alexa-icon { font-weight: bold; font-size: 18px; }
+#status-conexao { font-size: 11px; color: #00ffcc; font-weight: bold; }
