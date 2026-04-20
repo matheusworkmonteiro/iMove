@@ -6,30 +6,43 @@
     <title>iMove Control</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="iMove">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
 
     <div id="tela-selecao" class="app-container">
         <header>
-            <div class="logo">iMove <span>Control</span></div>
+            <img src="logo.jpeg" alt="iMove Control" class="app-logo-main" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block'">
+            <div id="alt-logo" class="logo-texto" style="display:none;">iMove <span>Control</span></div>
             <p class="tagline">MOVIMENTO INTELIGENTE</p>
         </header>
-        <div class="instrucao">Selecione seu dispositivo:</div>
+
+        <div class="instrucao">Selecione o dispositivo para controlar:</div>
+
         <div class="opcoes-lista">
             <div class="card-dispositivo" onclick="configurarApp(2, 'iMove Essential', '💺')">
-                <div class="icon-main">💺</div>
-                <div class="info"><h3>Essential</h3><p>Poltrona - 2 Movimentos</p></div>
+                <div class="icon-circle">💺</div>
+                <div class="info">
+                    <h3>Essential</h3>
+                    <p>Poltrona - 2 Movimentos</p>
+                </div>
             </div>
+
             <div class="card-dispositivo" onclick="configurarApp(4, 'iMove Comfort', '🛏️')">
-                <div class="icon-main">🛏️</div>
-                <div class="info"><h3>Comfort</h3><p>Cama Simples - 4 Movimentos</p></div>
+                <div class="icon-circle">🛏️</div>
+                <div class="info">
+                    <h3>Comfort</h3>
+                    <p>Cama Simples - 4 Movimentos</p>
+                </div>
             </div>
-            <div class="card-dispositivo" onclick="configurarApp(6, 'iMove Plus', '🛌')">
-                <div class="icon-main">🛌</div>
-                <div class="info"><h3>Plus</h3><p>Cama Premium - 6 Movimentos</p></div>
+
+            <div class="card-dispositivo" onclick="configurarApp(8, 'iMove Pro', '🛌')">
+                <div class="icon-circle">🛌</div>
+                <div class="info">
+                    <h3>Pro</h3>
+                    <p>Cama Premium - 8 Movimentos</p>
+                </div>
             </div>
         </div>
     </div>
@@ -37,25 +50,31 @@
     <div id="tela-controle" class="app-container" style="display: none;">
         <div class="top-nav">
             <button class="btn-voltar" onclick="voltarParaSelecao()">⬅ Voltar</button>
-            <div class="logo-mini">iMove</div>
+            <img src="logo.jpeg" alt="iMove" class="logo-mini-img">
         </div>
+
         <section class="monitor">
             <h2 id="nome-dispositivo">Dispositivo</h2>
             <div id="status-icon" class="main-display-icon">🛏️</div>
+            
             <div class="progresso-status">
                 <div class="barra-fundo"><div id="barra-progresso" class="barra-preenchida"></div></div>
-                <p><span id="txt-posicao">0</span>% da Elevação</p>
+                <p><span id="txt-posicao">0</span>% de Elevação</p>
             </div>
         </section>
-        <section id="grade-botoes" class="controles-grid"></section>
+
+        <section id="grade-botoes" class="controles-grid">
+            </section>
+
         <footer class="footer-controle">
             <div class="alexa-badge">
-                <span class="alexa-icon">◯</span>
+                <span class="alexa-ring">◯</span>
                 <span>Alexa integrada e ativa</span>
             </div>
             <div id="status-conexao">● Sistema Pronto</div>
         </footer>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

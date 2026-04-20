@@ -1,42 +1,67 @@
 :root {
-    --azul-fundo: #001a33;
-    --azul-card: #002d5a;
+    --azul-fundo: #000f1f;
+    --azul-card: #001d3d;
     --amarelo: #ffcc00;
     --branco: #ffffff;
-    --texto-secundario: #a0b0c0;
+    --texto-secundario: #8a9cb0;
     --cor-alexa: #00CAFF;
 }
 
-body { background-color: #000; margin: 0; font-family: sans-serif; color: var(--branco); display: flex; justify-content: center; }
-.app-container { background-color: var(--azul-fundo); width: 100vw; max-width: 450px; height: 100vh; display: flex; flex-direction: column; }
+body {
+    background-color: #000;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--branco);
+    overflow: hidden;
+}
 
-header { text-align: center; padding: 40px 20px; }
-.logo { font-size: 32px; font-weight: bold; color: var(--amarelo); }
-.logo span { color: var(--branco); }
-.tagline { font-size: 10px; letter-spacing: 3px; opacity: 0.7; margin-top: 5px; }
+.app-container {
+    background-color: var(--azul-fundo);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-.instrucao { text-align: center; margin-bottom: 20px; color: var(--texto-secundario); font-size: 14px; }
-.opcoes-lista { padding: 0 20px; display: flex; flex-direction: column; gap: 15px; }
+.app-logo-main { max-width: 180px; height: auto; margin: 20px auto; display: block; border-radius: 8px; }
+.logo-texto { font-size: 28px; font-weight: bold; color: var(--amarelo); text-align: center; margin-top: 20px; }
+.logo-texto span { color: var(--branco); }
+.logo-mini-img { height: 22px; width: auto; border-radius: 4px; }
+.tagline { text-align: center; font-size: 9px; letter-spacing: 4px; opacity: 0.6; margin-top: -10px; margin-bottom: 30px; }
 
-.card-dispositivo { background: var(--azul-card); border: 1px solid rgba(255, 204, 0, 0.2); border-radius: 15px; padding: 20px; display: flex; align-items: center; gap: 20px; cursor: pointer; }
-.card-dispositivo:active { transform: scale(0.97); border-color: var(--amarelo); }
-.icon-main { font-size: 35px; }
-.info h3 { margin: 0; color: var(--amarelo); font-size: 18px; }
+.instrucao { text-align: center; margin-bottom: 25px; color: var(--texto-secundario); font-size: 13px; }
+.opcoes-lista { padding: 0 25px; display: flex; flex-direction: column; gap: 18px; }
 
-.top-nav { display: flex; justify-content: space-between; align-items: center; padding: 15px; background: rgba(0,0,0,0.3); }
-.btn-voltar { background: none; border: 1px solid var(--amarelo); color: var(--amarelo); padding: 5px 12px; border-radius: 8px; cursor: pointer; }
+.card-dispositivo {
+    background: linear-gradient(145deg, var(--azul-card), #00264d);
+    border: 1px solid rgba(255, 204, 0, 0.15);
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
-.monitor { text-align: center; padding: 20px 10px; }
-.main-display-icon { font-size: 60px; margin-bottom: 10px; }
+.icon-circle { font-size: 30px; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 50%; }
+.info h3 { margin: 0; color: var(--amarelo); font-size: 17px; }
+.info p { margin: 3px 0 0; font-size: 12px; color: var(--texto-secundario); }
 
-.barra-fundo { background: #1a3a5a; height: 8px; border-radius: 4px; width: 70%; margin: 10px auto; overflow: hidden; }
-.barra-preenchida { background: var(--amarelo); width: 0%; height: 100%; transition: 0.3s; box-shadow: 0 0 10px var(--amarelo); }
+.top-nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: rgba(0,0,0,0.2); }
+.btn-voltar { background: none; border: 1px solid var(--amarelo); color: var(--amarelo); padding: 6px 14px; border-radius: 20px; font-size: 11px; cursor: pointer; }
 
-.controles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 10px 25px; flex-grow: 1; }
-.btn-comando { background: var(--azul-card); border: 1px solid var(--amarelo); color: var(--branco); padding: 22px 10px; border-radius: 15px; font-weight: bold; font-size: 14px; }
-.btn-comando:active { background: var(--amarelo); color: var(--azul-fundo); }
+.monitor { text-align: center; padding: 15px; }
+.main-display-icon { font-size: 65px; margin: 10px 0; }
 
-.footer-controle { padding: 15px; background: rgba(0,0,0,0.4); text-align: center; }
-.alexa-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 202, 255, 0.1); border: 1px solid var(--cor-alexa); padding: 6px 15px; border-radius: 20px; font-size: 11px; color: var(--cor-alexa); margin-bottom: 10px; }
-.alexa-icon { font-weight: bold; font-size: 18px; }
-#status-conexao { font-size: 11px; color: #00ffcc; font-weight: bold; }
+.barra-fundo { background: #001a33; height: 6px; border-radius: 3px; width: 60%; margin: 12px auto; overflow: hidden; }
+.barra-preenchida { background: var(--amarelo); width: 0%; height: 100%; transition: 0.4s; box-shadow: 0 0 8px var(--amarelo); }
+
+.controles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 10px 25px; flex-grow: 1; align-content: start; }
+.btn-comando { background: var(--azul-card); border: 1px solid rgba(255, 204, 0, 0.4); color: var(--branco); padding: 25px 10px; border-radius: 16px; font-weight: bold; font-size: 13px; text-transform: uppercase; }
+.btn-comando:active { background: var(--amarelo); color: #000; transform: scale(0.95); }
+
+.footer-controle { padding: 20px; text-align: center; background: rgba(0,0,0,0.3); }
+.alexa-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 202, 255, 0.08); border: 1px solid var(--cor-alexa); padding: 6px 16px; border-radius: 30px; font-size: 11px; color: var(--cor-alexa); margin-bottom: 12px; }
+.alexa-ring { font-weight: bold; font-size: 16px; animation: pulse 2s infinite; }
+
+@keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+#status-conexao { font-size: 10px; color: #00ffcc; font-weight: bold; }

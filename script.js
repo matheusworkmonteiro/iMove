@@ -1,7 +1,8 @@
-const nomesBotoes = {
+const layoutBotoes = {
     1: "CABECEIRA ▲", 2: "CABECEIRA ▼",
     3: "PÉS ▲", 4: "PÉS ▼",
-    5: "MEMÓRIA 1", 6: "MEMÓRIA 2"
+    5: "TRAVESSEIRO ▲", 6: "TRAVESSEIRO ▼",
+    7: "MASSAGEM", 8: "ESTADO ZERO"
 };
 
 function configurarApp(vias, nome, icone) {
@@ -9,14 +10,18 @@ function configurarApp(vias, nome, icone) {
     document.getElementById('tela-controle').style.display = 'flex';
     document.getElementById('nome-dispositivo').innerText = nome;
     document.getElementById('status-icon').innerText = icone;
+
     const grade = document.getElementById('grade-botoes');
     grade.innerHTML = "";
+
     for (let i = 1; i <= vias; i++) {
         const btn = document.createElement('button');
         btn.className = 'btn-comando';
-        btn.innerText = nomesBotoes[i] || `MOV ${i}`;
-        btn.onmousedown = () => statusOperacao(i, true);
-        btn.onmouseup = () => statusOperacao(i, false);
+        btn.innerText = layoutBotoes[i] || `CANAL ${i}`;
+
+        btn.onmousedown = btn.ontouchstart = (e) => { e.preventDefault(); acaoRelé(i, true); };
+        btn.onmouseup = btn.ontouchend = () => acaoRelé(i, false);
+        
         grade.appendChild(btn);
     }
 }
@@ -26,15 +31,19 @@ function voltarParaSelecao() {
     document.getElementById('tela-controle').style.display = 'none';
 }
 
-function statusOperacao(id, ativo) {
+function acaoRelé(id, ligar) {
     const status = document.getElementById('status-conexao');
     const barra = document.getElementById('barra-progresso');
-    if (ativo) {
-        status.innerText = `● Movimentando Canal ${id}...`;
+    const txtPos = document.getElementById('txt-posicao');
+
+    if (ligar) {
+        status.innerText = `● COMANDANDO ${layoutBotoes[id]}...`;
         status.style.color = "#ffcc00";
-        barra.style.width = (id * 15) + "%"; 
+        let val = Math.floor(Math.random() * 10) + (id * 10);
+        barra.style.width = val + "%";
+        txtPos.innerText = val;
     } else {
-        status.innerText = "● Sistema Pronto";
+        status.innerText = "● SISTEMA PRONTO";
         status.style.color = "#00ffcc";
     }
 }
