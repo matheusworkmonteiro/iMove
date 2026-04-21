@@ -5,12 +5,18 @@
   "display": "standalone",
   "background_color": "#000f1f",
   "theme_color": "#000f1f",
+  "description": "Controle inteligente de movimento iMove",
   "icons": [
     {
-      "src": "Icone.jpeg",
+      "src": "icone.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any maskable"
+    },
+    {
+      "src": "icone.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
     }
   ]
 }
