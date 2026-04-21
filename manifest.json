@@ -8,13 +8,13 @@
   "description": "Controle inteligente de movimento iMove",
   "icons": [
     {
-      "src": "icone.jpg",
+      "src": "icone.jpeg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any maskable"
     },
     {
-      "src": "icone.jpg",
+      "src": "icone.jpeg",
       "sizes": "192x192",
       "type": "image/jpeg"
     }

@@ -1,11 +1,11 @@
-// Registro do Service Worker para permitir a instalação
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
-      .then(reg => console.log('Service Worker registrado!', reg))
-      .catch(err => console.log('Erro ao registrar Service Worker', err));
-  });
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Service Worker registrado!'))
+            .catch(err => console.log('Erro ao registrar Service Worker', err));
+    });
 }
+
 const layoutBotoes = {
     1: "CABECEIRA ▲", 2: "CABECEIRA ▼",
     3: "PÉS ▲", 4: "PÉS ▼",
@@ -45,9 +45,9 @@ function acaoRelé(id, ligar) {
     const txtPos = document.getElementById('txt-posicao');
 
     if (ligar) {
-        status.innerText = `● COMANDANDO ${layoutBotoes[id]}...`;
+        status.innerText = `● ENVIANDO COMANDO...`;
         status.style.color = "#ffcc00";
-        let val = Math.floor(Math.random() * 10) + (id * 10);
+        let val = Math.floor(Math.random() * 20) + 40; 
         barra.style.width = val + "%";
         txtPos.innerText = val;
     } else {
